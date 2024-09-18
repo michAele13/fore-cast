@@ -31,6 +31,7 @@ background: rgb(93, 86, 45);
 padding: 15px 20px;
 border: none;
 border-radius: 6px;
+margin-left: 5px;
 color: white;
 font-size: 16px;
 }
@@ -73,6 +74,7 @@ main {
 
 .weather-app-temperature {
     font-size: 88px;
+    line-height: 88px;
     font-weight: bold;
 }
 
