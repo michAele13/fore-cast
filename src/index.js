@@ -53,7 +53,16 @@ function handleSearchSubmit(event) {
     //search for the city we want info on
 }
 
-function displayForecast() {
+function getForecast(city) {
+    let apiKey = "7dc1fb414419t3f0f0ecf4ddodda5a29";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+    axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    console.log(response.data);
+
+
     let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHtml = "";
 
@@ -79,5 +88,5 @@ forecastElement.innerHTML = forecastHtml;
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("San Marcos");
-displayForecast();
+searchCity("Austin");
+getForecast("Austin");
