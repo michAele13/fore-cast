@@ -17,6 +17,8 @@ function refreshWeather(response) {
     windSpeedElement.innerHTML = `${response.data.wind.speed}mph`;
     timeElement.innerHTML = formatDate(date);
     temperatureElement.innerHTML = Math.round(temperature);
+
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
